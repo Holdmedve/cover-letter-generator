@@ -3,3 +3,4 @@ pypdf
 pathlib
 requests
 beautifulsoup4
+openai
