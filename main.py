@@ -9,6 +9,7 @@ def main():
         linkedin_job_url = st.text_input("LinkedIn Job url")
         cv_file = st.file_uploader("Your CV in PDF format", type="pdf")
         submit_button = st.form_submit_button(label='Submit')
+        container = st.container()
     
     if submit_button:
         if is_form_incomplete(file=cv_file, url=linkedin_job_url):
@@ -19,8 +20,10 @@ def main():
             st.warning('Provided url is invalid')
             return
 
-        result = generate_cover_letter(cv_file=cv_file, linkedin_job_url=linkedin_job_url)        
-        print(result)
+        result = generate_cover_letter(cv_file=cv_file, linkedin_job_url=linkedin_job_url)
+        with container:
+            st.header('Your cover letter:')
+            st.write(result)
     
 
 

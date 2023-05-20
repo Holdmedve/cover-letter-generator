@@ -30,7 +30,6 @@ def prompt_model_for_cover_letter(job_description, cv):
         temperature=0.6, 
         n=1, 
     )
-    print(response)
     return response['choices'][0]['text']
 
 
