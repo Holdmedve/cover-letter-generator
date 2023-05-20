@@ -23,8 +23,7 @@ def main():
         result = generate_cover_letter(cv_file=cv_file, linkedin_job_url=linkedin_job_url)
         with container:
             st.header('Your cover letter:')
-            st.write(result)
-    
+            st.write(result)    
 
 
 if __name__ == '__main__':
